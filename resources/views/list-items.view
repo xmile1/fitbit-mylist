@@ -1,123 +1,323 @@
 <svg>
-  <textarea x="25" y="50" width="100%-50"
+  <textarea x="30" y="50" width="100%-50"
     fill="red"
     font-size="30" font-weight="bold" id="no-list-items"
     text-anchor="middle"> Instruction on how to add items to a list from settings</textarea>
-  <use id="back-button" href="#text-button" class="text-button bottom application-fill">
+  <use
+    id="back-button" href="#text-button" class="text-button bottom application-fill">
     <set href="#text" attributeName="text-buffer" to="Go back" />
   </use>
 
-  <use id="listItems" class="list-items" href="#scrollview">
-    <!-- Section 1 -->
-    <use href="#view-header" height="50" fill="lightgray">
-      <set href="#back" attributeName="text-buffer" to="←" />
-      <set href="#text" attributeName="text-buffer" to="12:00" />
-    </use>
-
-    <use class="sv" href="#scrollview-item" height="70">
-      <use id="item1" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 1" />
-      </use>
-    </use>
-    <use class="sv" href="#scrollview-item" height="70">
-      <use id="item1" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
-      </use>
-    </use>
-    <use class="sv" href="#scrollview-item" height="70">
-      <use id="item1" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
-      </use>
-    </use>
-    <use class="sv" href="#scrollview-item" height="70">
-      <use id="item1" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
-      </use>
-    </use>
-    <use class="sv" href="#scrollview-item" display="flexible-height">
-      <use id="item1" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
-      </use>
-    </use>
-
-    <use class="sv" href="#scrollview-item" display="flexible-height">
-      <use id="item1" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 1" />
-      </use>
-    </use>
-    <use class="sv" href="#scrollview-item" display="flexible-height">
-      <use id="item1" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
-      </use>
-    </use>
-    <use class="sv" href="#scrollview-item" display="flexible-height">
-      <use id="item1" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
-      </use>
-    </use>
-    <use class="sv" href="#scrollview-item" display="flexible-height">
-      <use id="item1" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
-      </use>
-    </use>
-    <use class="sv" href="#scrollview-item" display="flexible-height">
-      <use id="item1" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
-      </use>
-    </use>
-
-    <use class="sv" href="#scrollview-item" display="flexible-height">
-      <use id="item1" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 1" />
-      </use>
-    </use>
-    <use class="sv" href="#scrollview-item" display="flexible-height">
-      <use id="item1" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
-      </use>
-    </use>
-    <use class="sv" href="#scrollview-item" display="flexible-height">
-      <use id="item1" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
-      </use>
-    </use>
-    <use class="sv" href="#scrollview-item" display="flexible-height">
-      <use id="item1" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
-      </use>
-    </use>
-    <use class="sv" href="#scrollview-item" display="flexible-height">
-      <use id="item1" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
-      </use>
-    </use>
-
-    <!-- Done Task -->
-    <use class="sv" href="#scrollview-item" display="flexible-height">
-      <use id="item1" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 1" />
-      </use>
-    </use>
-    <use class="sv" href="#scrollview-item" display="flexible-height">
-      <use id="item1" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
-      </use>
-    </use>
-    <use class="sv" href="#scrollview-item" display="flexible-height">
-      <use id="item1" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
-      </use>
-    </use>
-    <use class="sv" href="#scrollview-item" display="flexible-height">
-      <use id="item1" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
-      </use>
-    </use>
-    <use class="sv" href="#scrollview-item" display="flexible-height">
-      <use id="item1" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
-      </use>
-    </use>
+  <use
+    href="#view-header"
+    height="50" fill="lightgray" layer="2">
+    <set href="#back" attributeName="text-buffer" to="←" />
+    <set href="#text" attributeName="text-buffer" to="12:00" />
   </use>
 
+  <use y="50" height="100%-50" id="listItems" href="#tile-list" class="horizontal-pad list-items">
+    <var id="separator-height-bottom" value="6" />
+
+
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+    <use href="#my-tile-item">
+      <set href="#text" attributeName="text-buffer" to="Text" />
+    </use>
+  </use>
 </svg>

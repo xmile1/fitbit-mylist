@@ -1,7 +1,7 @@
 import document from "document";
 import { writeFileSync } from "fs";
 import { inbox } from "file-transfer";
-import { updateList } from "../utils/updateList";
+import { getLists } from "../utils/getLists";
 
 export function init() {
   inbox.onnewfile = processInbox;
@@ -39,7 +39,8 @@ const initializeView = (lists = {}) => {
 };
 
 function processInbox() {
-  updateList(initializeView);
+  const list = getLists();
+  initializeView(list);
 }
 
 function gotoListItems(listName) {

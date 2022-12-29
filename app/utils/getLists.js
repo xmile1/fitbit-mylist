@@ -2,7 +2,7 @@ import { existsSync, readFileSync, writeFileSync, unlinkSync } from "fs";
 import { inbox } from "file-transfer";
 import * as cbor from "cbor";
 
-export const updateList = (cb) => {
+export const getLists = () => {
   let fileName;
   let listWithItems = {};
   let todoItemsFromDB = [];
@@ -13,31 +13,33 @@ export const updateList = (cb) => {
 
   while ((fileName = inbox.nextFile())) {
     if (fileName === "listFromSettings.cbor") {
-      listWithItems = readFileSync("listFromSettings.cbor", "cbor");
       let currentListName = readFileSync("currentListName.txt", "cbor");
 
+      if (listWithItems[currentListName]) {
+        todoItemsFromDB = listWithItems[currentListName].items;
+      }
+
+      listWithItems = readFileSync("listFromSettings.cbor", "cbor");
+
       if (!currentListName) {
-        cb(listWithItems);
         writeFileSync("todoList.cbor", cbor.encode(listWithItems));
         writeFileSync("currentListName.txt", cbor.encode(undefined));
-        return;
+        return listWithItems;
       }
 
       const todoItems = listWithItems[currentListName].items;
 
-      if (existsSync("todoList.cbor")) {
-        let json_object = readFileSync("todoList.cbor", "cbor");
-        if (json_object[currentListName]) {
-          todoItemsFromDB = json_object[currentListName].items;
-        }
-      }
-
       const mergedTodoItems = todoItems.map((todoItem, index) => {
+        const checked =
+          todoItem.name === todoItemsFromDB[index]?.name
+            ? todoItemsFromDB[index]?.checked
+            : false;
         return {
           name: todoItem.name,
-          checked: !!todoItemsFromDB[index]?.checked,
+          checked,
         };
       });
+
       listWithItems[currentListName] = {
         items: mergedTodoItems,
       };
@@ -48,5 +50,5 @@ export const updateList = (cb) => {
       }
     }
   }
-  cb(listWithItems);
+  return listWithItems;
 };

@@ -307,7 +307,7 @@
 
 "@fitbit/sdk-cli@^1.7.3":
   version "1.7.3"
-  resolved "https://registry.npmjs.org/@fitbit/sdk-cli/-/sdk-cli-1.7.3.tgz#f17dd0f02a3e17f1c2c423c4a8b254901bb0730f"
+  resolved "https://registry.npmjs.org/@fitbit/sdk-cli/-/sdk-cli-1.7.3.tgz"
   integrity sha512-nwfwlp2T05CQMPVui6+mfefZdPUZ/YaeFOI9tt0q/mUvrn494Y7uOt4H7OEuOqTRzXhlAPapO43Col1Ny7RUtQ==
   dependencies:
     "@fitbit/app-package" "^1.7.3"
@@ -342,7 +342,7 @@
 
 "@fitbit/sdk@~6.1.0":
   version "6.1.0"
-  resolved "https://registry.npmjs.org/@fitbit/sdk/-/sdk-6.1.0.tgz#11f229e545c74a5528fd4b8eeb447327233d10ed"
+  resolved "https://registry.npmjs.org/@fitbit/sdk/-/sdk-6.1.0.tgz"
   integrity sha512-5gp1UaPUm50vIgU3ABadhTlrVRPWOfPlWf+HsErHOgJWXsbHjIJgBJq4or9XS3vwtsi3kmN2YgaTODJAJst1WQ==
   dependencies:
     "@babel/core" "^7.13.16"
