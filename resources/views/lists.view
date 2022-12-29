@@ -1,0 +1,118 @@
+<svg>
+  <textarea x="25" y="50" width="100%-50" fill="red"
+    font-size="30" font-weight="bold" id="no-lists"
+    text-anchor="middle"
+  > 
+    Instruction on how to add items from settings
+  </textarea>
+  <use display="none" id="lists" class="lists" href="#scrollview">
+    <use href="#scrollview-item" display="flexible-height">
+      <use id="item1123" href="#my-list">
+        <set href="#text" attributeName="text-buffer" to="Text Item 1" />
+      </use>
+    </use>
+    <use href="#scrollview-item" display="flexible-height">
+      <use id="item2" href="#my-list">
+        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
+      </use>
+    </use>
+    <use href="#scrollview-item" display="flexible-height">
+      <use id="item3" href="#my-list">
+        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
+      </use>
+    </use>
+    <use href="#scrollview-item" display="flexible-height">
+      <use id="item4" href="#my-list">
+        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
+      </use>
+    </use>
+    <use href="#scrollview-item" display="flexible-height">
+      <use id="item5" href="#my-list">
+        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
+      </use>
+    </use>
+
+    <use href="#scrollview-item" display="flexible-height">
+      <use id="item1" href="#my-list">
+        <set href="#text" attributeName="text-buffer" to="Text Item 1" />
+      </use>
+    </use>
+    <use href="#scrollview-item" display="flexible-height">
+      <use id="item6" href="#my-list">
+        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
+      </use>
+    </use>
+    <use href="#scrollview-item" display="flexible-height">
+      <use id="item7" href="#my-list">
+        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
+      </use>
+    </use>
+    <use href="#scrollview-item" display="flexible-height">
+      <use id="item8" href="#my-list">
+        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
+      </use>
+    </use>
+    <use href="#scrollview-item" display="flexible-height">
+      <use id="item9" href="#my-list">
+        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
+      </use>
+    </use>
+
+    <use href="#scrollview-item" display="flexible-height">
+      <use id="item10" href="#my-list">
+        <set href="#text" attributeName="text-buffer" to="Text Item 1" />
+      </use>
+    </use>
+    <use href="#scrollview-item" display="flexible-height">
+      <use id="item11" href="#my-list">
+        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
+      </use>
+    </use>
+    <use href="#scrollview-item" display="flexible-height">
+      <use id="item12" href="#my-list">
+        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
+      </use>
+    </use>
+    <use href="#scrollview-item" display="flexible-height">
+      <use id="item13" href="#my-list">
+        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
+      </use>
+    </use>
+    <use href="#scrollview-item" display="flexible-height">
+      <use id="item14" href="#my-list">
+        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
+      </use>
+    </use>
+
+    <use href="#scrollview-item" display="flexible-height">
+      <use id="item15" href="#my-list">
+        <set href="#text" attributeName="text-buffer" to="Text Item 1" />
+      </use>
+    </use>
+    <use href="#scrollview-item" display="flexible-height">
+      <use id="item16" href="#my-list">
+        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
+      </use>
+    </use>
+    <use href="#scrollview-item" display="flexible-height">
+      <use id="item17" href="#my-list">
+        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
+      </use>
+    </use>
+    <use href="#scrollview-item" display="flexible-height">
+      <use id="item18" href="#my-list">
+        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
+      </use>
+    </use>
+    <use href="#scrollview-item" display="flexible-height">
+      <use id="item19" href="#my-list">
+        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
+      </use>
+    </use>
+    <use href="#scrollview-item" display="flexible-height">
+      <use id="item20" href="#my-list">
+        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
+      </use>
+    </use>
+  </use>
+</svg>
