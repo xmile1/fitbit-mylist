@@ -33,3 +33,5 @@ const getCurrentListName = () => {
   const currentListName = settingsStorage.getItem("selection");
   return JSON.parse(currentListName)?.values?.[0].name;
 };
+
+init({});

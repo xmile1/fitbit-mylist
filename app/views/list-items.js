@@ -1,7 +1,7 @@
 import document from "document";
 import { inbox } from "file-transfer";
 import { readFileSync, writeFileSync } from "fs";
-import { updateList } from "../utils/updateList";
+import { getLists } from "../utils/getLists";
 
 export function init() {
   inbox.onnewfile = processInbox;
@@ -15,69 +15,65 @@ const initializeView = (lists) => {
   const currentListItems = lists[currentListName].items;
 
   const itemsWrapper = document.getElementById("listItems");
-  const items = itemsWrapper?.getElementsByClassName("list-item") || [];
+  const items = itemsWrapper.getElementsByClassName("list-item") || [];
   const noListItems = document.getElementById("no-list-items");
   const backArrow = document.getElementById("back");
-  const backButton = document.getElementById("back-button");
+  const resetButton = document.getElementById("reset");
+
+  backArrow.onclick = goToList;
 
   if (!currentListItems?.length) {
-    backButton.onclick = goToList
     noListItems.style.display = "inline";
     itemsWrapper.style.display = "none";
     return;
   }
 
   noListItems.style.display = "none";
-  itemsWrapper?.style.display = "inline";
+  itemsWrapper.style.display = "inline";
 
-  backArrow.onclick = goToList
-  // items.forEach((itemElement, index) => {
-  //   const item = currentListItems[index];
-  //   if (!item || item.checked) items[index].style.display = "none";
-  //   if (item && !item.checked) {
-  //     items[index].style.display = "inline";
-  //     items[index].getElementById("text").text = item?.name;
-
-  //     const checkbox =  items[index].getElementById("checkbox-touch");
-  //     checkbox.onclick = () => onItemClick({
-  //       itemElement: items[index],
-  //       itemsElementWrapper: itemsWrapper,
-  //       items,
-  //       lists,
-  //       index,
-  //       currentListName
-  //     })
-  //   }
-  //   setTimeout(() => forceUIUpdate(itemsWrapper, items), 1000);
-  // });
-  let uncheckedIndex = 0;
-let checkedIndex = 0;
+  resetButton.onclick = clearAllCheckbox({
+    items,
+    lists,
+    currentListName,
+  });
 
   currentListItems.forEach((item, index) => {
-        // const item = currentListItems[index];
-    if (!item || item.checked) {
-      // items[index].style.display = "none";
-    }
-    if (item && !item.checked) {
-      items[uncheckedIndex].style.display = "inline";
-      items[uncheckedIndex].style.visibility = "visible";
-      items[uncheckedIndex].getElementById("text").text = item?.name;
+    if (item) {
+      const checkedItemIndex = currentListItems.length + index;
 
-      const checkbox =  items[uncheckedIndex].getElementById("checkbox-touch");
-      console.log('uncheckedIndex', uncheckedIndex)
-      checkbox.onclick = onItemClick({
-        itemElement: items[uncheckedIndex],
-        uncheckedIndex,
-        itemsElementWrapper: itemsWrapper,
-        items,
+      const itemElement = items[index];
+      const checkedItemElement = items[checkedItemIndex];
+
+      itemElement.getElementById("text").text = item.name;
+      checkedItemElement.getElementById("text").text = item?.name;
+
+      const checkbox = itemElement.getElementById("checkbox-touch");
+      const checkedElementCheckbox =
+        checkedItemElement.getElementById("checkbox-touch");
+
+      checkedItemElement.getElementById("checkbox-tick").style.display =
+        "inline";
+
+      const toggleCheckboxProps = {
         lists,
+        currentListName,
+        checkedItemElement,
+        itemElement,
         index,
-        currentListName
-      })
-      uncheckedIndex++
-    }
+      };
 
-  })
+      itemElement.onclick = toggleTodoStatus(toggleCheckboxProps, false);
+      checkedItemElement.onclick = toggleTodoStatus(toggleCheckboxProps, true);
+
+      if (item.checked) {
+        itemElement.hide();
+        checkedItemElement.show();
+      } else {
+        itemElement.show();
+        checkedItemElement.hide();
+      }
+    }
+  });
 };
 
 const goToList = () => {
@@ -86,43 +82,44 @@ const goToList = () => {
   import("./lists").then((module) => {
     module.init({});
   });
+};
+
+function toggleTodoStatus(
+  { lists, currentListName, index, checkedItemElement, itemElement },
+  isChecked
+) {
+  return () => {
+    setTimeout(() => {
+      itemElement[isChecked ? "show" : "hide"]();
+      checkedItemElement[isChecked ? "hide" : "show"]();
+    }, 300);
+    if (isChecked) {
+      checkedItemElement.animate("disable");
+    } else {
+      itemElement.animate("enable");
+    }
+
+    lists[currentListName].items[index].checked = !isChecked;
+    writeFileSync("todoList.cbor", lists, "cbor");
+  };
 }
 
-const forceUIUpdate = (list, items) => {
-  list.value = items.length - 1;
-  list.value = 0;
-}
+const clearAllCheckbox =
+  ({ items, lists, currentListName }) =>
+  () => {
+    lists[currentListName].items.forEach((item, index) => {
+      const checkedItemIndex = lists[currentListName].items.length + index;
+      const itemElement = items[index];
+      const checkedItemElement = items[checkedItemIndex];
 
-const onItemClick = ({
-  itemElement,
-  itemsWrapper,
-  lists,
-  index,
-  uncheckedIndex,
-  currentListName,
-  items
-}) => () => {
-    const sv = document?.getElementsByClassName("sv") 
-    // document.getElementById("sv555").height = 0;
-  const checkboxTick = itemElement.getElementById("checkbox-tick");
-  checkboxTick.style.display = "inline";
-  console.log('uncheckedIndex', uncheckedIndex)
-  itemElement.animate("enable");
-    sv[0].height = 20
-
-
-
-  // setTimeout(() => {
-  //   // itemElement.style.display = "none";
-  //   sv[uncheckedIndex].style.height = 0
-  //   // itemElement.style.height = "0px";
-  //   // forceUIUpdate(lists, items)
-
-  // }, 300);
-  // lists[currentListName].items[index].checked = true;
-  // writeFileSync("todoList.cbor", lists, "cbor");
-}
+      itemElement.show();
+      checkedItemElement.hide();
+      lists[currentListName].items[index].checked = false;
+    });
+    writeFileSync("todoList.cbor", lists, "cbor");
+  };
 
 function processInbox() {
-  updateList(initializeView);
+  const list = getLists();
+  initializeView(list);
 }
