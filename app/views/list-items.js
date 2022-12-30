@@ -91,10 +91,12 @@ const setTime = () => {
   const time = document.getElementById("time");
 
   const date = new Date();
-  time.text = `${date.getHours()}:${date.getMinutes()}`;
+  time.text = `${date.getHours()}:${("0" + date.getMinutes()).slice(-2)}`;
   clock.granularity = "minutes";
   clock.ontick = (evt) => {
-    time.text = `${evt.date.getHours()}:${evt.date.getMinutes()}`;
+    time.text = `${evt.date.getHours()}:${("0" + evt.date.getMinutes()).slice(
+      -2
+    )}`;
   };
 };
 
@@ -132,14 +134,6 @@ const clearAllCheckbox =
     });
     writeFileSync("todoList.cbor", lists, "cbor");
   };
-
-const updateClock = (time) => {
-  var today = new Date();
-  var hours = today.getHours();
-  var mins = today.getMinutes();
-
-  time.text = hours + ":" + mins;
-};
 
 function processInbox() {
   const list = getLists();

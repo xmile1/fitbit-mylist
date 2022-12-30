@@ -1,5 +1,5 @@
 .defaultText {
-  font-size: 32;
+  font-size: 36;
   font-family: System-Regular;
   font-weight: regular;
   text-length: 500;
@@ -18,7 +18,7 @@
 .list-item text {
   fill: "white";
   x: 10%;
-  font-size: 24;
+  font-size: 36;
   text-length: 500;
 }
 
@@ -26,12 +26,11 @@
   height: 70;
 }
 
-
 .list text {
   text-anchor: middle;
   fill: "white";
   x: 50%;
-  font-size: 24;
+  font-size: 36;
   text-length: 500;
 }
 
