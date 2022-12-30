@@ -1,4 +1,5 @@
 import document from "document";
+import clock from "clock";
 import { inbox } from "file-transfer";
 import { readFileSync, writeFileSync } from "fs";
 import { getLists } from "../utils/getLists";
@@ -19,6 +20,8 @@ const initializeView = (lists) => {
   const noListItems = document.getElementById("no-list-items");
   const backArrow = document.getElementById("back");
   const resetButton = document.getElementById("reset");
+
+  setTime();
 
   backArrow.onclick = goToList;
 
@@ -84,6 +87,17 @@ const goToList = () => {
   });
 };
 
+const setTime = () => {
+  const time = document.getElementById("time");
+
+  const date = new Date();
+  time.text = `${date.getHours()}:${date.getMinutes()}`;
+  clock.granularity = "minutes";
+  clock.ontick = (evt) => {
+    time.text = `${evt.date.getHours()}:${evt.date.getMinutes()}`;
+  };
+};
+
 function toggleTodoStatus(
   { lists, currentListName, index, checkedItemElement, itemElement },
   isChecked
@@ -118,6 +132,14 @@ const clearAllCheckbox =
     });
     writeFileSync("todoList.cbor", lists, "cbor");
   };
+
+const updateClock = (time) => {
+  var today = new Date();
+  var hours = today.getHours();
+  var mins = today.getMinutes();
+
+  time.text = hours + ":" + mins;
+};
 
 function processInbox() {
   const list = getLists();

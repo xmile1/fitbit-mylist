@@ -13,7 +13,11 @@ export const getLists = () => {
 
   while ((fileName = inbox.nextFile())) {
     if (fileName === "listFromSettings.cbor") {
-      let currentListName = readFileSync("currentListName.txt", "cbor");
+      let currentListName = Object.keys(listWithItems)?.[0];
+
+      if (existsSync("currentListName.txt")) {
+        currentListName = readFileSync("currentListName.txt", "cbor");
+      }
 
       if (listWithItems) {
         todoItemsFromDB = listWithItems;

@@ -12,7 +12,7 @@
     href="#view-header"
     height="50" fill="lightgray" layer="2">
     <set href="#back" attributeName="text-buffer" to="←" />
-    <set href="#text" attributeName="text-buffer" to="12:00" />
+    <set href="#time" attributeName="text-buffer" to="12:00" />
   </use>
 
   <use y="50" height="100%-50" id="listItems" href="#tile-list" class="horizontal-pad list-items">
