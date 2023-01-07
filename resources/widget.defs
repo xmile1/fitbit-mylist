@@ -9,7 +9,7 @@
     <link rel="import" href="/mnt/sysassets/widgets/tile_list_widget.defs" />
     <link rel="import" href="/mnt/sysassets/widgets/text_button.defs" />
 
-    <symbol id="my-tile-item" href="#tile-list-item" class="list-item" display="none"
+    <symbol id="my-list-item" href="#tile-list-item" class="list-item" display="none"
       pointer-events="all">
       <g pointer-events="visible">
         <animateTransform attributeType="translate"
@@ -18,9 +18,9 @@
           from="0%,0%" to="0%,-100%" begin="disable" dur="0.3" final="restore" />
         <animate attributeName="opacity" begin="disable" from="1" to="0" dur="0.3" final="restore" />
         <rect class="bg" />
-        <text id="text" />
+        <textarea id="text" />
 
-        <g id="checkbox" transform="translate(100%-70,20)">
+        <g id="checkbox" transform="translate(100%-45,20)">
           <rect id="checkbox-touch" x="0" y="0" width="30" height="30" rx="2" />
           <line x1="0" y1="0" x2="30" y2="0" fill="white" stroke-width="2" />
           <line x1="0" y1="0" x2="0" y2="30" fill="white" stroke-width="2" />

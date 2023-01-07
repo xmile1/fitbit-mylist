@@ -2,7 +2,8 @@
   <textarea x="30" y="50" width="100%-50"
     fill="red"
     font-size="30" font-weight="bold" id="no-list-items"
-    text-anchor="middle"> Instruction on how to add items to a list from settings</textarea>
+    text-anchor="middle"> Please add an item to the selected list from this app's settings on your
+    phone's Fitbit app</textarea>
   <use
     id="back-button" href="#text-button" class="text-button bottom application-fill">
     <set href="#text" attributeName="text-buffer" to="Go back" />
@@ -19,304 +20,304 @@
     <var id="separator-height-bottom" value="6" />
 
     <!-- 100 items -->
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
-    <use href="#my-tile-item">
+    <use href="#my-list-item">
       <set href="#text" attributeName="text-buffer" to="Text" />
     </use>
   </use>

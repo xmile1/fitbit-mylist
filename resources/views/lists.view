@@ -3,7 +3,7 @@
     font-size="30" font-weight="bold" id="no-lists"
     text-anchor="middle"
   >
-    Instruction on how to add items from settings
+    Please create a list from this app's settings in your phone's Fitbit app.
   </textarea>
   <use display="none" href="#tile-list" id="lists" class="horizontal-pad lists">
     <var id="separator-height-bottom" value="6" />

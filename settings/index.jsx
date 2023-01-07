@@ -1,123 +1,125 @@
+const handleListChange =
+  (currentLists, settingsStorage, settings) => (value) => {
+    if (value.length > currentLists.length) {
+      const lastItemIndex = value.length - 1;
+      const lastItem = value[lastItemIndex];
+      settingsStorage.setItem(
+        "selection",
+        JSON.stringify({
+          values: [{ name: lastItem.name }],
+          selected: [lastItemIndex],
+        })
+      );
+    }
+    if (value.length < currentLists.length) {
+      currentLists.forEach((item) => {
+        const found = value.find((i) => i.name === item.name);
+        if (!found) {
+          settingsStorage.removeItem(item.name);
+        }
+      });
+      settingsStorage.setItem(
+        "selection",
+        JSON.stringify({
+          values: [{ name: value[0]?.name }],
+          selected: [0],
+        })
+      );
+    }
+  };
+
+const handleListItemChange = (settingsStorage, settings) => (value) => {
+  const selection = JSON.parse(settings.selection);
+  setTimeout(async () => {
+    try {
+      const a = value;
+      const lastItem = a[a.length - 1];
+
+      if (lastItem?.name?.match(/,|\[ \]|\[x\]|- \[ \]|- \[x\]/)) {
+        const splitItems = lastItem.name.split(/,|\[ \]|- \[ \]|- \[x\]|\[x\]/);
+        const newItems = splitItems.map((item) => ({
+          name: item.trim(),
+        }));
+
+        settingsStorage.setItem(
+          selection?.values[0].name,
+          JSON.stringify([...a.slice(0, -1), ...newItems.filter((i) => i.name)])
+        );
+      }
+    } catch (e) {
+      // A conscious disaster
+      console.log(e);
+    }
+  }, 1000);
+};
+
+const getCurrentSelectionName = (settings) => {
+  return settings.selection
+    ? JSON.parse(settings.selection).values[0].name
+    : null;
+};
+
 registerSettingsPage(({ settings, settingsStorage }) => {
   let currentLists = JSON.parse(settings.lists || "[]");
+  const currentSelectionName = getCurrentSelectionName(settings);
 
   return (
     <Page>
-      <Section
-        title={
-          <Text bold align='center'>
-            Lists
-          </Text>
+      <AdditiveList
+        title={<Text bold>List Names</Text>}
+        settingsKey='lists'
+        addAction={
+          <TextInput
+            title='List Name'
+            label='Add a new list name'
+            placeholder='Type a list name'
+            action='Add the list'
+          />
         }
-      >
-        <AdditiveList
-          title='A list with Autocomplete'
-          settingsKey='lists'
-          renderItem={({ name }) => (
-            <Section>
-              <TextImageRow label={name} />
-            </Section>
-          )}
-          addAction={
-            <TextInput
-              title='Add List Item'
-              label='Item Name'
-              placeholder='Type something'
-              action='Add Item'
-            />
+        onListChange={handleListChange(currentLists, settingsStorage, settings)}
+      />
+
+      {!!currentLists?.length && (
+        <Section title={<Text bold>Manage a list</Text>}>
+          <Select
+            label={`Click to select a list to manage`}
+            settingsKey='selection'
+            options={JSON.parse(settings.lists || "[]")}
+            selectViewTitle='Select a list to manage'
+          />
+        </Section>
+      )}
+      {currentSelectionName && (
+        <Section
+          title={
+            <Text bold>
+              List items{" "}
+              {currentSelectionName ? `for ${currentSelectionName}` : ""}
+            </Text>
           }
-          onListChange={(value) => {
-            if (value.length > currentLists.length) {
-              const lastItemIndex = value.length - 1;
-              const lastItem = value[lastItemIndex];
-              settingsStorage.setItem(
-                "selection",
-                JSON.stringify({
-                  values: [{ name: lastItem.name }],
-                  selected: [lastItemIndex],
-                })
-              );
+          description={
+            <Text>
+              NOTE: You can paste a list from google keep, Apple notes, etc. You
+              can also covert a new line separated list(e.g a list from excel,
+              word etc) into a comma separated list easily here
+              https://convert.town/replace-new-lines-with-commas
+              (https://bit.ly/3vLT3b6).
+            </Text>
+          }
+        >
+          <AdditiveList
+            settingsKey={getCurrentSelectionName(settings)}
+            onListChange={handleListItemChange(settingsStorage, settings)}
+            addAction={
+              <TextInput
+                label='Add new items'
+                placeholder='e.g Milk,Eggs,Bread'
+                disabled={!settings.selection}
+              />
             }
-            if (value.length < currentLists.length) {
-              settingsStorage.setItem(
-                "selection",
-                JSON.stringify({
-                  values: [{}],
-                  selected: [0],
-                })
-              );
-            }
-          }}
-        />
-      </Section>
-      <Section
-        title={
-          <Text bold align='center'>
-            Select a list to edit
-          </Text>
-        }
-      >
-        <Select
-          label={`Select a list to edit`}
-          settingsKey='selection'
-          options={JSON.parse(settings.lists || "[]")}
-        />
-      </Section>
-
-      <Section
-        title={
-          <Text bold align='center'>
-            List items
-          </Text>
-        }
-      >
-        <AdditiveList
-          title='List Items'
-          settingsKey={
-            settings.selection
-              ? JSON.parse(settings.selection).values[0].name
-              : "undefined"
-          }
-          onListChange={(value) => {
-            const selection = JSON.parse(settings.selection);
-            console.log(selection?.values[0].name, "selection?.values[0].name");
-            setTimeout(async () => {
-              try {
-                const a = value;
-                const lastItem = a[a.length - 1];
-
-                if (lastItem?.name?.match(/,|\[ \]|\[x\]/)) {
-                  const splitItems = lastItem.name.split(/,|\[ \]|\[x\]/);
-                  const newItems = splitItems.map((item) => ({
-                    name: item.trim(),
-                  }));
-
-                  settingsStorage.setItem(
-                    selection?.values[0].name,
-                    JSON.stringify([...a.slice(0, -1), ...newItems])
-                  );
-                }
-              } catch (e) {
-                console.log(e);
-              }
-            }, 1000);
-          }}
-          renderItem={({ name, value }) => (
-            <Section>
-              <TextImageRow label={name} sublabel={value} />
-            </Section>
-          )}
-          addAction={
-            <TextInput
-              title='Add List Item'
-              label='Item Name'
-              placeholder='Type something'
-              action='Add Item'
-              disabled={true}
-            />
-          }
-        />
-      </Section>
+          />
+        </Section>
+      )}
     </Page>
   );
 });

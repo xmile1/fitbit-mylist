@@ -50,10 +50,6 @@ const initializeView = (lists) => {
       itemElement.getElementById("text").text = item.name;
       checkedItemElement.getElementById("text").text = item?.name;
 
-      const checkbox = itemElement.getElementById("checkbox-touch");
-      const checkedElementCheckbox =
-        checkedItemElement.getElementById("checkbox-touch");
-
       checkedItemElement.getElementById("checkbox-tick").style.display =
         "inline";
 

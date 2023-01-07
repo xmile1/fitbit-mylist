@@ -15,11 +15,15 @@
   height: 70;
 }
 
-.list-item text {
+.list-item #text {
   fill: "white";
-  x: 10%;
-  font-size: 36;
+  x: 10;
+  y: 0;
+  width: 80%;
+  font-size: 24;
   text-length: 500;
+  text-overflow: ellipsis;
+  display-align: center;
 }
 
 .list {
@@ -43,9 +47,9 @@
 
 .bg {
   fill: #111111;
-  width: 100%;
+  width: 100%+40;
   height: 100%;
-  x: 0;
+  x: -20;
   y: 0;
 }
 

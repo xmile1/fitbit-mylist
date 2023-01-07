@@ -1,5 +1,6 @@
 {
-  "name": "simple-todo",
+  "name": "any-list",
+  "displayName": "Any list",
   "version": "0.1.0",
   "private": true,
   "license": "UNLICENSED",
@@ -11,7 +12,7 @@
   "fitbit": {
     "appUUID": "37260cf3-22b2-42bc-99c4-1bc1208fa357",
     "appType": "app",
-    "appDisplayName": "Simple Todo",
+    "appDisplayName": "Any list",
     "iconFile": "resources/icon.png",
     "wipeColor": "#ffffff",
     "requestedPermissions": [],
