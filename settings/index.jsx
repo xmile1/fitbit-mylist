@@ -31,24 +31,21 @@ const handleListChange =
 const handleListItemChange = (settingsStorage, settings) => (value) => {
   const selection = JSON.parse(settings.selection);
   setTimeout(async () => {
-    try {
-      const a = value;
-      const lastItem = a[a.length - 1];
+    const lastItem = value[value.length - 1];
 
-      if (lastItem?.name?.match(/,|\[ \]|\[x\]|- \[ \]|- \[x\]/)) {
-        const splitItems = lastItem.name.split(/,|\[ \]|- \[ \]|- \[x\]|\[x\]/);
-        const newItems = splitItems.map((item) => ({
-          name: item.trim(),
-        }));
+    if (lastItem?.name?.match(/,|\[ \]|\[x\]|- \[ \]|- \[x\]/)) {
+      const splitItems = lastItem.name.split(/,|\[ \]|- \[ \]|- \[x\]|\[x\]/);
+      const newItems = splitItems.map((item) => ({
+        name: item.trim(),
+      }));
 
-        settingsStorage.setItem(
-          selection?.values[0].name,
-          JSON.stringify([...a.slice(0, -1), ...newItems.filter((i) => i.name)])
-        );
-      }
-    } catch (e) {
-      // A conscious disaster
-      console.log(e);
+      settingsStorage.setItem(
+        selection?.values[0].name,
+        JSON.stringify([
+          ...value.slice(0, -1),
+          ...newItems.filter((i) => i.name),
+        ])
+      );
     }
   }, 1000);
 };
@@ -120,6 +117,10 @@ registerSettingsPage(({ settings, settingsStorage }) => {
           />
         </Section>
       )}
+      <Section title={<Text bold>Color Scheme</Text>}>
+        <Text>Select a color scheme for the watch app.</Text>
+        <ColorSelect settingsKey='color' colors={[{ color: "grey" }]} />
+      </Section>
     </Page>
   );
 });

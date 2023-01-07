@@ -3,10 +3,18 @@ import clock from "clock";
 import { inbox } from "file-transfer";
 import { readFileSync, writeFileSync } from "fs";
 import { getLists } from "../utils/getLists";
+import { setColorScheme } from "../utils/setColorScheme";
+import { processInbox } from "../utils/processInbox";
 
 export function init() {
-  inbox.onnewfile = processInbox;
-  processInbox();
+  inbox.onnewfile = () => processInbox(initializeView);
+  onInit();
+}
+
+function onInit() {
+  const list = getLists();
+  initializeView(list);
+  setColorScheme();
 }
 
 const initializeView = (lists) => {
@@ -130,8 +138,3 @@ const clearAllCheckbox =
     });
     writeFileSync("todoList.cbor", lists, "cbor");
   };
-
-function processInbox() {
-  const list = getLists();
-  initializeView(list);
-}

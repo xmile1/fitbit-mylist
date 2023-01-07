@@ -1,11 +1,12 @@
 <svg>
-  <textarea x="25" y="50" width="100%-50" fill="red"
+  <rect id="background" />
+  <textarea x="40" y="50" width="100%-50" class="text-color"
     font-size="30" font-weight="bold" id="no-lists"
     text-anchor="middle"
   >
     Please create a list from this app's settings in your phone's Fitbit app.
   </textarea>
-  <use display="none" href="#tile-list" id="lists" class="horizontal-pad lists">
+  <use display="none" href="#tile-list" id="lists" class="lists">
     <var id="separator-height-bottom" value="6" />
 
     <use href="#my-list">

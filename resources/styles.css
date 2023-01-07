@@ -1,25 +1,11 @@
-.defaultText {
-  font-size: 36;
-  font-family: System-Regular;
-  font-weight: regular;
-  text-length: 500;
-}
-
-#background {
-  width: 100%;
-  height: 100%;
-  fill: white;
-}
-
 .list-item {
   height: 70;
 }
 
 .list-item #text {
-  fill: "white";
-  x: 10;
+  x: 30;
   y: 0;
-  width: 80%;
+  width: 65%;
   font-size: 24;
   text-length: 500;
   text-overflow: ellipsis;
@@ -32,7 +18,6 @@
 
 .list text {
   text-anchor: middle;
-  fill: "white";
   x: 50%;
   font-size: 36;
   text-length: 500;
@@ -41,16 +26,15 @@
 .line {
   width: 100%;
   height: 6;
-  fill: #222222;
   y: 100%-6;
 }
 
 .bg {
-  fill: #111111;
   width: 100%+40;
   height: 100%;
-  x: -20;
+  x: 0;
   y: 0;
+  opacity: 0;
 }
 
 #touch {
@@ -58,5 +42,16 @@
   height: 100%-6;
   x: 0;
   y: 0;
+  opacity: 0;
+}
+
+#background {
+  width: 100%;
+  height: 100%;
+  x: 0;
+  y: 0;
+}
+
+.checkbox-touch {
   opacity: 0;
 }

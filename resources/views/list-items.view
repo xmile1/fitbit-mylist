@@ -1,9 +1,5 @@
 <svg>
-  <textarea x="30" y="50" width="100%-50"
-    fill="red"
-    font-size="30" font-weight="bold" id="no-list-items"
-    text-anchor="middle"> Please add an item to the selected list from this app's settings on your
-    phone's Fitbit app</textarea>
+
   <use
     id="back-button" href="#text-button" class="text-button bottom application-fill">
     <set href="#text" attributeName="text-buffer" to="Go back" />
@@ -11,13 +7,15 @@
 
   <use
     href="#view-header"
-    height="50" fill="lightgray" layer="2">
-    <set href="#back" attributeName="text-buffer" to="←" />
-    <set href="#time" attributeName="text-buffer" to="00:00" />
+    height="50" layer="2">
   </use>
+  <rect id="background" />
+  <textarea x="30" y="70" width="100%-50" fill="white" font-size="30" font-weight="bold"
+    id="no-list-items" class="text-color" text-anchor="middle"> Please add an item to the selected
+    list from this app's settings on your phone's Fitbit app</textarea>
 
-  <use y="50" height="100%-50" id="listItems" href="#tile-list" class="horizontal-pad list-items">
-    <var id="separator-height-bottom" value="6" />
+  <use y="50" height="100%-50" width="100%" x="0" id="listItems" href="#tile-list"
+    class="list-items">
 
     <!-- 100 items -->
     <use href="#my-list-item">

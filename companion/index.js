@@ -1,6 +1,6 @@
 import { settingsStorage } from "settings";
 import { outbox } from "file-transfer";
-import * as cbor from "cbor";
+import { encode } from "cbor";
 
 settingsStorage.onchange = function (evt) {
   init(evt);
@@ -9,11 +9,17 @@ settingsStorage.onchange = function (evt) {
 const init = (evt) => {
   if (evt.key === "selection") {
     const currentListName = getCurrentListName();
-    outbox.enqueue("currentListName.txt", cbor.encode(currentListName));
-  } else {
-    const list = mergeListsWithItems();
-    outbox.enqueue("listFromSettings.cbor", cbor.encode(list));
+    outbox.enqueue("currentListName.txt", encode(currentListName));
+    return;
   }
+
+  if (evt.key === "color") {
+    outbox.enqueue("color.txt", encode(evt.newValue.slice(1, -1)));
+    return;
+  }
+
+  const list = mergeListsWithItems();
+  outbox.enqueue("listFromSettings.cbor", encode(list));
 };
 
 const mergeListsWithItems = () => {

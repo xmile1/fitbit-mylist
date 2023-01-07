@@ -2,10 +2,18 @@ import document from "document";
 import { writeFileSync } from "fs";
 import { inbox } from "file-transfer";
 import { getLists } from "../utils/getLists";
+import { processInbox } from "../utils/processInbox";
+import { setColorScheme } from "../utils/setColorScheme";
 
 export function init() {
-  inbox.onnewfile = processInbox;
-  processInbox();
+  inbox.onnewfile = () => processInbox(initializeView);
+  onInit();
+}
+
+function onInit() {
+  const list = getLists();
+  initializeView(list);
+  setColorScheme();
 }
 
 const initializeView = (lists = {}) => {
@@ -37,11 +45,6 @@ const initializeView = (lists = {}) => {
     }
   });
 };
-
-function processInbox() {
-  const list = getLists();
-  initializeView(list);
-}
 
 function gotoListItems(listName) {
   inbox.onnewfile = undefined;
