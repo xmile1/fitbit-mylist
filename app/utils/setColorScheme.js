@@ -9,13 +9,13 @@ const colorSchemes = {
     headerBackground: "lightgray",
     headerColor: "black",
   },
-  tomato: {
-    background: "red",
-    textColor: "black",
-    checkboxColor: "black",
-    lineColor: "#222222",
-    headerBackground: "lightgray",
-    headerColor: "black",
+  green: {
+    background: "#042004",
+    textColor: "#E7E9E7",
+    checkboxColor: "#E7E9E7",
+    lineColor: "#343F34",
+    headerBackground: "#141613",
+    headerColor: "#E7E9E7",
   },
 };
 
