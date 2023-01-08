@@ -121,7 +121,15 @@ registerSettingsPage(({ settings, settingsStorage }) => {
         <Text>Select a color scheme for the watch app.</Text>
         <ColorSelect
           settingsKey='color'
-          colors={[{ color: "grey" }, { color: "green" }]}
+          colors={[
+            { color: "white" },
+            { color: "grey" },
+            { color: "green" },
+            { color: "black" },
+            { color: "plum" },
+            { color: "purple" },
+            { color: "red" },
+          ]}
         />
       </Section>
     </Page>

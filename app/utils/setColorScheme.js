@@ -1,6 +1,14 @@
 import document from "document";
 import { existsSync, readFileSync } from "fs";
 const colorSchemes = {
+  black: {
+    background: "#1D2127",
+    textColor: "#E7E9E7",
+    checkboxColor: "#E7E9E7",
+    lineColor: "#414244",
+    headerBackground: "#0D111A",
+    headerColor: "#E7E9E7",
+  },
   grey: {
     background: "#111111",
     textColor: "white",
@@ -15,6 +23,38 @@ const colorSchemes = {
     checkboxColor: "#E7E9E7",
     lineColor: "#343F34",
     headerBackground: "#141613",
+    headerColor: "#E7E9E7",
+  },
+  plum: {
+    background: "#47344A",
+    textColor: "#E7E9E7",
+    checkboxColor: "#E7E9E7",
+    lineColor: "#625064",
+    headerBackground: "#200524",
+    headerColor: "#E7E9E7",
+  },
+  red: {
+    background: "#A52A2A",
+    textColor: "#E7E9E7",
+    checkboxColor: "#E7E9E7",
+    lineColor: "#B15656",
+    headerBackground: "#761212",
+    headerColor: "#E7E9E7",
+  },
+  purple: {
+    background: "#2E2A57",
+    textColor: "#E7E9E7",
+    checkboxColor: "#E7E9E7",
+    lineColor: "#433F66",
+    headerBackground: "#0C0843",
+    headerColor: "#E7E9E7",
+  },
+  white: {
+    background: "#F8F8F8",
+    textColor: "#494C51",
+    checkboxColor: "#494C51",
+    lineColor: "#A6A7AA",
+    headerBackground: "#2A2E35",
     headerColor: "#E7E9E7",
   },
 };
