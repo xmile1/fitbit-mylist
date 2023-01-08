@@ -96,9 +96,9 @@ registerSettingsPage(({ settings, settingsStorage }) => {
           }
           description={
             <Text>
-              NOTE: You can paste a list from google keep, Apple notes, etc. You
-              can also covert a new line separated list(e.g a list from excel,
-              word etc) into a comma separated list easily here
+              NOTE: You can paste a list from google keep, Apple notes, etc. For
+              new line separated lists(e.g from excel, word etc) convert them
+              first into a comma separated list easily here
               https://convert.town/replace-new-lines-with-commas
               (https://bit.ly/3vLT3b6).
             </Text>

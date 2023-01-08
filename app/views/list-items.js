@@ -98,9 +98,13 @@ const setTime = () => {
   time.text = `${date.getHours()}:${("0" + date.getMinutes()).slice(-2)}`;
   clock.granularity = "minutes";
   clock.ontick = (evt) => {
-    time.text = `${evt.date.getHours()}:${("0" + evt.date.getMinutes()).slice(
-      -2
-    )}`;
+    try {
+      time.text = `${evt.date.getHours()}:${("0" + evt.date.getMinutes()).slice(
+        -2
+      )}`;
+    } catch {
+      console.log("Error updating time");
+    }
   };
 };
 
