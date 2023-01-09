@@ -5,6 +5,7 @@ import { readFileSync, writeFileSync } from "fs";
 import { getLists } from "../utils/getLists";
 import { setColorScheme } from "../utils/setColorScheme";
 import { processInbox } from "../utils/processInbox";
+const INDEX_OF_FIRST_CHECKED_ELEMENT = 51;
 
 export function init() {
   inbox.onnewfile = () => processInbox(initializeView);
@@ -50,16 +51,13 @@ const initializeView = (lists) => {
 
   currentListItems.forEach((item, index) => {
     if (item) {
-      const checkedItemIndex = currentListItems.length + index;
+      const checkedItemIndex = INDEX_OF_FIRST_CHECKED_ELEMENT + index;
 
       const itemElement = items[index];
       const checkedItemElement = items[checkedItemIndex];
 
       itemElement.getElementById("text").text = item.name;
       checkedItemElement.getElementById("text").text = item?.name;
-
-      checkedItemElement.getElementById("checkbox-tick").style.display =
-        "inline";
 
       const toggleCheckboxProps = {
         lists,
@@ -74,6 +72,8 @@ const initializeView = (lists) => {
 
       if (item.checked) {
         itemElement.hide();
+        checkedItemElement.getElementById("checkbox-tick").style.display =
+          "inline";
         checkedItemElement.show();
       } else {
         itemElement.show();
@@ -138,7 +138,7 @@ const clearAllCheckbox =
   ({ items, lists, currentListName }) =>
   () => {
     lists[currentListName].items.forEach((item, index) => {
-      const checkedItemIndex = lists[currentListName].items.length + index;
+      const checkedItemIndex = INDEX_OF_FIRST_CHECKED_ELEMENT + index;
       const itemElement = items[index];
       const checkedItemElement = items[checkedItemIndex];
 
