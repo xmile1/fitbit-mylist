@@ -1,7 +1,7 @@
 import document from "document";
 import { existsSync, readFileSync } from "fs";
 const colorSchemes = {
-  black: {
+  darkSlateGray: {
     background: "#1D2127",
     textColor: "#E7E9E7",
     checkboxColor: "#E7E9E7",
@@ -9,7 +9,7 @@ const colorSchemes = {
     headerBackground: "#0D111A",
     headerColor: "#E7E9E7",
   },
-  grey: {
+  black: {
     background: "#111111",
     textColor: "white",
     checkboxColor: "white",
@@ -22,7 +22,7 @@ const colorSchemes = {
     textColor: "#E7E9E7",
     checkboxColor: "#E7E9E7",
     lineColor: "#343F34",
-    headerBackground: "#141613",
+    headerBackground: "#051004",
     headerColor: "#E7E9E7",
   },
   plum: {
@@ -41,7 +41,7 @@ const colorSchemes = {
     headerBackground: "#761212",
     headerColor: "#E7E9E7",
   },
-  purple: {
+  royalBlue: {
     background: "#2E2A57",
     textColor: "#E7E9E7",
     checkboxColor: "#E7E9E7",
@@ -50,17 +50,17 @@ const colorSchemes = {
     headerColor: "#E7E9E7",
   },
   white: {
-    background: "#F8F8F8",
-    textColor: "#494C51",
-    checkboxColor: "#494C51",
-    lineColor: "#A6A7AA",
-    headerBackground: "#2A2E35",
+    background: "#FFFFFF",
+    textColor: "#020303",
+    checkboxColor: "#020303",
+    lineColor: "#2C2D29",
+    headerBackground: "#020303",
     headerColor: "#E7E9E7",
   },
 };
 
 export const setColorScheme = () => {
-  let color = "grey";
+  let color = "black";
   if (existsSync("color.txt")) {
     color = readFileSync("color.txt", "cbor");
   }

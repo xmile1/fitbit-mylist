@@ -116,11 +116,17 @@ function toggleTodoStatus(
     setTimeout(() => {
       itemElement[isChecked ? "show" : "hide"]();
       checkedItemElement[isChecked ? "hide" : "show"]();
+
+      itemElement.getElementById("checkbox-tick").style.display = "none";
+      checkedItemElement.getElementById("checkbox-tick").style.display =
+        "inline";
     }, 300);
     if (isChecked) {
       checkedItemElement.animate("disable");
+      checkedItemElement.getElementById("checkbox-tick").style.display = "none";
     } else {
       itemElement.animate("enable");
+      itemElement.getElementById("checkbox-tick").style.display = "inline";
     }
 
     lists[currentListName].items[index].checked = !isChecked;

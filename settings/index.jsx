@@ -96,11 +96,7 @@ registerSettingsPage(({ settings, settingsStorage }) => {
           }
           description={
             <Text>
-              NOTE: You can paste a list from google keep, Apple notes, etc. For
-              new line separated lists(e.g from excel, word etc) convert them
-              first into a comma separated list easily here
-              https://convert.town/replace-new-lines-with-commas
-              (https://bit.ly/3vLT3b6).
+              NOTE 1: You can paste a list from Google keep, Apple notes, etc.
             </Text>
           }
         >
@@ -117,17 +113,32 @@ registerSettingsPage(({ settings, settingsStorage }) => {
           />
         </Section>
       )}
+      {currentSelectionName && (
+        <Section
+          description={
+            <Text>
+              NOTE 2: If you have a list that is separated by new lines (such as
+              those from Excel or Word), you can easily convert them into a
+              comma-separated list by using this tool:{" "}
+              <Link source='https://convert.town/replace-new-lines-with-commas'>
+                here
+              </Link>
+            </Text>
+          }
+        ></Section>
+      )}
+
       <Section title={<Text bold>Color Scheme</Text>}>
         <Text>Select a color scheme for the watch app.</Text>
         <ColorSelect
           settingsKey='color'
           colors={[
             { color: "white" },
-            { color: "grey" },
-            { color: "green" },
+            { color: "darkSlateGray" },
             { color: "black" },
             { color: "plum" },
-            { color: "purple" },
+            { color: "royalBlue" },
+            { color: "green" },
             { color: "red" },
           ]}
         />
