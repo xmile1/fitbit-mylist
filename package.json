@@ -1,9 +1,8 @@
 {
   "name": "any-list",
   "displayName": "Any list",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
-  "license": "UNLICENSED",
   "title": "Simple Todo",
   "devDependencies": {
     "@fitbit/sdk": "~6.1.0",
