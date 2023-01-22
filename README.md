@@ -1,4 +1,4 @@
-# Any List (Fitbit)
+# My List (Fitbit)
 
 https://gallery.fitbit.com/details/37260cf3-22b2-42bc-99c4-1bc1208fa357
 
@@ -38,7 +38,7 @@ To report and track issues, visit https://github.com/xmile1/fitbit-anylist/issue
 
 Q: How do I add list and list items?
 
-- Go to the settings page for `Any List` app inside the Fitbit app on your mobile device
+- Go to the settings page for `my List` app inside the Fitbit app on your mobile device
 
 Q: How do I add multiple items at once?
 

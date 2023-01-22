@@ -1,6 +1,6 @@
 {
-  "name": "any-list",
-  "displayName": "Any list",
+  "name": "my-list",
+  "displayName": "My list",
   "version": "1.0.0",
   "private": true,
   "title": "Simple Todo",
@@ -11,7 +11,7 @@
   "fitbit": {
     "appUUID": "37260cf3-22b2-42bc-99c4-1bc1208fa357",
     "appType": "app",
-    "appDisplayName": "Any list",
+    "appDisplayName": "My list",
     "iconFile": "resources/icon.png",
     "wipeColor": "#ffffff",
     "requestedPermissions": [],
