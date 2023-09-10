@@ -7,14 +7,14 @@
 
   <use
     href="#view-header"
-    height="50" layer="2">
+    height="60" layer="2">
   </use>
   <rect id="background" />
   <textarea x="30" y="70" width="100%-50" fill="white" font-size="30" font-weight="bold"
     id="no-list-items" class="text-color" text-anchor="middle"> Please add an item to the selected
     list from this app's settings on your phone's Fitbit app</textarea>
 
-  <use y="50" height="100%-50" width="100%" x="0" id="listItems" href="#tile-list"
+  <use y="60" height="100%-60" width="100%" x="0" id="listItems" href="#tile-list"
     class="list-items">
 
     <!-- 100 items -->
