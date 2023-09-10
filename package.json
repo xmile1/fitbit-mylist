@@ -1,9 +1,9 @@
 {
   "name": "my-list",
   "displayName": "My list",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "private": true,
-  "title": "Simple Todo",
+  "title": "My List",
   "devDependencies": {
     "@fitbit/sdk": "~6.1.0",
     "@fitbit/sdk-cli": "^1.7.3"
