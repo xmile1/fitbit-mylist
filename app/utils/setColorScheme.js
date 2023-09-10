@@ -57,6 +57,22 @@ const colorSchemes = {
     headerBackground: "#020303",
     headerColor: "#E7E9E7",
   },
+  purple: {
+    background: "#6A0572",
+    textColor: "#E7E9E7",
+    checkboxColor: "#E7E9E7",
+    lineColor: "#9D4EDD",
+    headerBackground: "#4B0D61",
+    headerColor: "#E7E9E7",
+  },
+  teal: {
+    background: "#008080",
+    textColor: "#E7E9E7",
+    checkboxColor: "#E7E9E7",
+    lineColor: "#00B2B2",
+    headerBackground: "#004C4C",
+    headerColor: "#E7E9E7",
+  },
 };
 
 export const setColorScheme = () => {

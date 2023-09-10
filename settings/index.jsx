@@ -64,13 +64,13 @@ registerSettingsPage(({ settings, settingsStorage }) => {
     <Page>
       <AdditiveList
         title={<Text bold>List Names</Text>}
-        settingsKey='lists'
+        settingsKey="lists"
         addAction={
           <TextInput
-            title='List Name'
-            label='Add a new list name'
-            placeholder='Type a list name'
-            action='Add the list'
+            title="List Name"
+            label="Add a new list name"
+            placeholder="Type a list name"
+            action="Add the list"
           />
         }
         onListChange={handleListChange(currentLists, settingsStorage, settings)}
@@ -80,9 +80,9 @@ registerSettingsPage(({ settings, settingsStorage }) => {
         <Section title={<Text bold>Manage a list</Text>}>
           <Select
             label={`Click to select a list to manage`}
-            settingsKey='selection'
+            settingsKey="selection"
             options={JSON.parse(settings.lists || "[]")}
-            selectViewTitle='Select a list to manage'
+            selectViewTitle="Select a list to manage"
           />
         </Section>
       )}
@@ -95,9 +95,7 @@ registerSettingsPage(({ settings, settingsStorage }) => {
             </Text>
           }
           description={
-            <Text>
-              NOTE 1: You can paste a list from Google keep, Apple notes, etc.
-            </Text>
+            <Text>NOTE 1: You can paste a list from Google keep, Apple notes, etc.</Text>
           }
         >
           <AdditiveList
@@ -105,8 +103,8 @@ registerSettingsPage(({ settings, settingsStorage }) => {
             onListChange={handleListItemChange(settingsStorage, settings)}
             addAction={
               <TextInput
-                label='Add new items'
-                placeholder='e.g Milk,Eggs,Bread'
+                label="Add new items"
+                placeholder="e.g Milk,Eggs,Bread"
                 disabled={!settings.selection}
               />
             }
@@ -131,7 +129,7 @@ registerSettingsPage(({ settings, settingsStorage }) => {
       <Section title={<Text bold>Color Scheme</Text>}>
         <Text>Select a color scheme for the watch app.</Text>
         <ColorSelect
-          settingsKey='color'
+          settingsKey="color"
           colors={[
             { color: "white" },
             { color: "darkSlateGray" },
@@ -140,6 +138,8 @@ registerSettingsPage(({ settings, settingsStorage }) => {
             { color: "royalBlue" },
             { color: "green" },
             { color: "red" },
+            { color: "purple" },
+            { color: "teal" },
           ]}
         />
       </Section>
