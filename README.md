@@ -12,7 +12,7 @@ A checklist app to create and manage any types of lists, including todo lists, s
 
 - Supports adding multiple items at once by using comma e.g `Break,Eggs,Butter`
 
-- Add up to 50 entries per list
+- Add up to 30 entries per list
 
 - Keep your entries decluttered by moving completed items to the bottom
 
@@ -61,3 +61,5 @@ Mayonnaise
 - Because fitbit doesn't support multiline input, you have to convert it to a comma-separated list by pasting it on this tool [https://convert.town/replace-new-lines-with-commas](https://convert.town/replace-new-lines-with-commas)
 
 - Then you can use the comma-separated list
+Q: I am getting blank screen with only the checkbox
+- This is a [known issue](https://github.com/xmile1/fitbit-mylist/issues/1) that happens when you have more than 30 items in a list.
